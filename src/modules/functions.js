@@ -32,7 +32,7 @@ function renderList() {
     edit.className = 'editbtn';
     edit.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
     edit.addEventListener('click', () => {
-      listItem.contentEditable = "true";
+      listItem.contentEditable = 'true';
     });
 
     checkbox.addEventListener('change', () => {
@@ -58,7 +58,7 @@ function renderList() {
     listItem.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        listItem.contentEditable = "false";
+        listItem.contentEditable = 'false';
         task.description = listItem.innerText.trim();
         saveTasksToLocalStorage();
       }
@@ -94,14 +94,13 @@ form.addEventListener('submit', (e) => {
   handleFormSubmit();
 });
 
-
 // Event listener for button click with ID "enter"
 const enterBtn = document.getElementById('enter');
 enterBtn.addEventListener('click', () => {
   handleFormSubmit();
 });
 
-//Event listener for Clear Completed Tasks Button
+// Event listener for Clear Completed Tasks Button
 const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => {
   tasks = tasks.filter((task) => !task.completed);
@@ -114,9 +113,5 @@ document.addEventListener('DOMContentLoaded', () => {
   loadTasksFromLocalStorage();
   renderList();
 });
-
-
-
-console.log('tasks', tasks);
 
 export default Function;
